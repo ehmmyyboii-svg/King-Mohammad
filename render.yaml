@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: bds-bot
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: BOT_ADMIN_TOKEN
+        sync: false
+      - key: BOT_OWNER_ID
+        sync: false
+      - key: BOT_PREFIX
+        value: .
+      - key: BOT_NAME
+        value: BDS BOT
+      - key: BOT_OWNER_NAME
+        value: King Muhammad
